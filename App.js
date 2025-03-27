@@ -1,7 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Platform,NativeModules, Button, Linking } from 'react-native';
+import { StyleSheet, Text, View, Image, Button } from 'react-native';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import * as Speech from 'expo-speech';
+const Stack = createNativeStackNavigator();
 
 //const speak = (text) => {
 //  Speech.speak(text, {
@@ -24,22 +29,45 @@ const speak = (text) => {
       KEY_PARAM_STREAM: 'STREAM_MUSIC',
     },
   });
-};
-
-
-
-export default function App() {
-  
-
+const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Button title="Hola" onPress={()=>speak("Hola todo mundo como andan")}>
-        <Text>Dame click</Text>
-      </Button>
-      <Image 
-        style={styles.image} 
-        source={require('./assets/ManGo-Angent.png')}
-      />
+      <Text>Bienvenido a la pantalla de inicio</Text>
+    </View>
+  );
+};
+
+const ProfileScreen = ({ route }) => {
+  return <Text>Este es el perfil de {route.params.name}</Text>;
+};
+
+const MyStack = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Bienvenido' }} />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Main" component={MainScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Inicio' }} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+const MainScreen = ({ navigation }) => {
+  return (
+    <View style={styles.container}>
+      <Button title="Ir a Home" onPress={() => navigation.navigate('Home')} />
+      <Image style={styles.image} source={require('./assets/ManGo-Angent.png')} />
       <View style={styles.textContainer}>
         <Text style={styles.text}>
           ¡Hola! <Text style={styles.highlightText}>SoyManGo</Text>, tu asistente deportivo personal. Si necesitas ayuda, solo toca el centro y háblame.
@@ -48,7 +76,7 @@ export default function App() {
       <StatusBar style="auto" />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -66,11 +94,11 @@ const styles = StyleSheet.create({
     borderColor: "#FFC91F",
   },
   textContainer: {
-    marginTop: 20, // Espaciado entre la imagen y el texto
-    padding: 15, // Espaciado interno
-    backgroundColor: '#fff', // Fondo blanco para el texto
-    borderRadius: 10, // Bordes redondeados
-    shadowColor: '#000', // Sombra para el contenedor de texto
+    marginTop: 20,
+    padding: 15,
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 2,
