@@ -9,7 +9,6 @@ const ProfileScreen = ({ route }) => {
 
 export default ProfileScreen;
 
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,

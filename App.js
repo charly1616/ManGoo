@@ -12,9 +12,11 @@ import MainScreen from "./Screens/MainScreen.js"
 
 import InstructionScreen from "./Screens/InstructionScreen.js"
 import ConfigScreen from './Screens/HistoryScreen.js';
-import RoutineScreen from "./Screens/RoutineScreen.js";
+import RoutineScreen from "./Screens/RoutineSc/RoutineScreen.js";
 import HistoryScreen from './Screens/InstructionScreen.js';
+import RoutineTypeScreen from './Screens/RoutineTypeScreen.js';
 
+import MuscleScreen from './Screens/RoutineSc/MusclesScreen.js';
 
 
 const App = () => {
@@ -22,12 +24,16 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Main" component={MainScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false , title: 'Inicio' }} />
+        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false, title: 'ManGo' }} />
 
         <Stack.Screen name="Instructions" component={InstructionScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Configuration" component={ConfigScreen} options={{ headerShown: false}} />
-        <Stack.Screen name="Routines" component={RoutineScreen} options={{ headerShown: false}} />
+        <Stack.Screen name="ChooseRoutines" component={RoutineTypeScreen} options={{ headerShown: false}} />
         <Stack.Screen name="History" component={HistoryScreen} options={{ headerShown: false}} />
+        
+        <Stack.Screen name="PredRoutines" component={RoutineScreen} options={{ headerShown: false}} />
+        <Stack.Screen name="Muscles" component={MuscleScreen} options={{ headerShown: false}} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
