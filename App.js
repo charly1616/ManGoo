@@ -1,82 +1,39 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Platform,NativeModules, Button, Linking } from 'react-native';
-import { StyleSheet, Text, View, Image, Button } from 'react-native';
+import { StyleSheet, Text, View, Image, Platform,NativeModules, Linking } from 'react-native';
 import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import * as Speech from 'expo-speech';
 const Stack = createNativeStackNavigator();
 
-//const speak = (text) => {
-//  Speech.speak(text, {
-//    language: 'es-ES',
-//    rate: 0.8,
-//    pitch: 1.1
-//  });
-//};
+import HomeScreen from "./Screens/HomeScreen.js"
+import ProfileScreen from "./Screens/ProfileScreen.js"
+import MainScreen from "./Screens/MainScreen.js"
 
-import Tts from 'react-native-tts';
-
+import InstructionScreen from "./Screens/InstructionScreen.js"
+import ConfigScreen from './Screens/HistoryScreen.js';
+import RoutineScreen from "./Screens/RoutineScreen.js";
+import HistoryScreen from './Screens/InstructionScreen.js';
 
 
-// Hablar texto
-const speak = (text) => {
-  Tts.speak('Hello, world!', {
-    androidParams: {
-      KEY_PARAM_PAN: -1,
-      KEY_PARAM_VOLUME: 0.5,
-      KEY_PARAM_STREAM: 'STREAM_MUSIC',
-    },
-  });
-const HomeScreen = ({ navigation }) => {
-  return (
-    <View style={styles.container}>
-      <Text>Bienvenido a la pantalla de inicio</Text>
-    </View>
-  );
-};
 
-const ProfileScreen = ({ route }) => {
-  return <Text>Este es el perfil de {route.params.name}</Text>;
-};
-
-const MyStack = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Bienvenido' }} />
-        <Stack.Screen name="Profile" component={ProfileScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-};
-
-export default function App() {
+const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Main" component={MainScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Inicio' }} />
+        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false , title: 'Inicio' }} />
+
+        <Stack.Screen name="Instructions" component={InstructionScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Configuration" component={ConfigScreen} options={{ headerShown: false}} />
+        <Stack.Screen name="Routines" component={RoutineScreen} options={{ headerShown: false}} />
+        <Stack.Screen name="History" component={HistoryScreen} options={{ headerShown: false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
-const MainScreen = ({ navigation }) => {
-  return (
-    <View style={styles.container}>
-      <Button title="Ir a Home" onPress={() => navigation.navigate('Home')} />
-      <Image style={styles.image} source={require('./assets/ManGo-Angent.png')} />
-      <View style={styles.textContainer}>
-        <Text style={styles.text}>
-          ¡Hola! <Text style={styles.highlightText}>SoyManGo</Text>, tu asistente deportivo personal. Si necesitas ayuda, solo toca el centro y háblame.
-        </Text>
-      </View>
-      <StatusBar style="auto" />
-    </View>
-  );
-};
+
 
 const styles = StyleSheet.create({
   container: {
@@ -115,3 +72,7 @@ const styles = StyleSheet.create({
     color: '#FFA500', // Color naranja para resaltar
   },
 });
+
+
+
+export default App;
