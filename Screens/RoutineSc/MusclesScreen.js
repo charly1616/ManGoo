@@ -1,6 +1,9 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
-import { useState } from "react";
+import { StyleSheet, Text, View, Image, TouchableOpacity, Button, ScrollView } from "react-native";
+import { useEffect, useState } from "react";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
+
+import exerciseData from '../../Services/Exercises.json' with { type: 'json' };
+import exerciseCard from "../../Components/ExerciseCard";
 
 const MuscleScreen = ({ navigation }) => {
   const [muscles] = useState([
@@ -16,24 +19,51 @@ const MuscleScreen = ({ navigation }) => {
     "Upper legs",
   ]);
 
+  const [selected, setSelected] = useState("")
+  const [exercises, setExercises] = useState([])
+
+  useEffect( ()=>{
+    const v = exerciseData.filter(e => e.bodyPart == selected).slice(0,20)
+    setExercises(v)
+  }
+    ,[selected])
+
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
         <View style={styles.titleView}>
           <Text style={styles.titleText}>Escoge un Musculo</Text>
         </View>
-        <View style={styles.gridCol}>
-            {muscles.map((e, i) => {
-            return (
-                <TouchableOpacity
-                style={[styles.optionButton]}
-                key={i}
-                >
-                <Text style={styles.buttonText}>{e}</Text>
-                </TouchableOpacity>
-            );
-            })}
-        </View>
+        <Button title="Atrás" onPress={()=>{setSelected("")}} style={{height: 45}}></Button>
+        
+            { (exercises.length > 0)?
+            
+              <ScrollView 
+              contentContainerStyle={styles.gridCol}>
+                {
+                  exercises.map( (v,i) => {
+                    return exerciseCard({type:(Math.floor(Math.random() * 4)), object:v})
+                  })
+                }
+              </ScrollView>
+              
+              :
+              <View style={{...styles.gridCol, height: "85%"}}>
+                  {
+                  muscles.map((e, i) => {
+                    return (
+                        <TouchableOpacity
+                        style={[styles.optionButton]}
+                        key={i}
+                        onPress={()=>{setSelected(e.toLowerCase())}}
+                        >
+                          <Text style={styles.buttonText}>{e}</Text>
+                        </TouchableOpacity>
+                    );
+                  })
+                  }
+              </View>
+            }
         
       </SafeAreaView>
     </SafeAreaProvider>
@@ -61,11 +91,11 @@ const styles = StyleSheet.create({
   },
 
   gridCol: {
-    flex: 1, // Cada fila ocupa la mitad de la pantalla
     flexDirection: "column",
+    justifyContent: 'space-between',
     gap: 10,
     paddingTop: 10,
-    paddingInline: 10,
+    paddingInline: 10
   },
   optionButton: {
     flex: 1, // Cada botón ocupa la mitad del ancho

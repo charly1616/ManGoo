@@ -3,11 +3,13 @@ import { useState } from "react";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import Icon from "react-native-vector-icons/FontAwesome6";
 
+
+
 const RoutineTypeScreen = ({ navigation }) => {
   const [navs] = useState([
     ["PredRoutines", "Rutinas predeterminadas", "#FF9D23", "person-running"],
     ["PersRoutines", "Rutinas personalizadas", "#F93827", "users-rays"],
-    ["Home", "Ejercicios", "#16C47F", "list-ul"],
+    ["Exercises", "Ejercicios", "#16C47F", "list-ul"],
     ["Muscles", "Entrenar musculos", "#FFD65A", "dumbbell"],
   ]);
 
