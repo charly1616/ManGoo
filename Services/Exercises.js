@@ -25,7 +25,7 @@ async function downloadJSON() {
     const jsonData = await response.json();
 
     // 4. Guardar en un archivo local
-    const filePath = './downloaded_data.json';
+    const filePath = './Exercises.json';
     fs.writeFileSync(filePath, JSON.stringify(jsonData, null, 2));
     
     console.log(`Archivo guardado correctamente en: ${filePath}`);
