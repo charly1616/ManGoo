@@ -3,10 +3,13 @@ import { useEffect, useState } from "react";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import Icon from 'react-native-vector-icons/FontAwesome6';
 import { WebView } from 'react-native-webview';
+import { useRoute } from '@react-navigation/native';
 
-const WorkExerciseScreen = ({ navigation, route }) => {
-
-  const { exercise = {}, time = 10 } = route?.params ?? {};
+const WorkExerciseScreen = ({ navigation }) => {
+  const route = useRoute();
+  const [exercise] = useState(route.params);
+  //console.log("Se recibiò",route.params)
+  const [time] = useState(10);
   const [seconds, setSeconds] = useState(21);
   const [isRunning, setIsRunning] = useState(false);
 
@@ -32,22 +35,23 @@ const WorkExerciseScreen = ({ navigation, route }) => {
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
         <View style={styles.titleView}>
-          <Text style={styles.titleText}>Preparate</Text>
+          <Text style={styles.titleText}>{exercise.name}</Text>
         </View>
         <Button title="Atrás" onPress={() => navigation.goBack()} style={{minHeight: 145}}></Button>
         <View style={styles.ImageContainer}>
-          {exercise.gitUrl?
+          {!exercise?.gifUrl?
           <Image
             style={{width: '80%', height: '80%', resizeMode: 'contain' }}
             source={require("../../assets/Missing.jpg")}/>
           :
           <WebView
             originWhitelist={['*']}
-            source={{ html: '<img style="width:90%;" src="https://v2.exercisedb.io/image/WHA7pERM-oAM-W" />' }}
+            source={{ html: '<img style="width:90%;" src='+exercise?.gifUrl+' />' }}
             style={{ width: 350, maxHeight: 350 }}
           />
           }
           <Text>{seconds}</Text>
+
         </View>      
         <View style={{display: 'flex', flexDirection: 'row', alignItems:'stretch', justifyContent: 'center', gap: 10}}>
           <TouchableOpacity onPress={()=>setIsRunning(!isRunning)} style={{...styles.Button, backgroundColor: '#16C47F'}}>

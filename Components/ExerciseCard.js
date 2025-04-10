@@ -1,14 +1,17 @@
-import { StyleSheet, Text, View} from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome6';
 
+import { useNavigation } from '@react-navigation/native';
 import lightenColor from '../Utilities/Colors.js'
 
 const tyles = ["#5ad98b", "#fe9f4d","#ff6464", "#ffdc4a"]
 const exerciseCard = ({type, object})=>{
+  const nav = useNavigation()
 
   return (
-    <View style={{display:'flex', flexDirection: 'row', marginBottom: 10}} key={object.name}>
-      <View style={{...styles.exerciseCard, backgroundColor: lightenColor(tyles[type],45)}} >
+    <TouchableOpacity style={{display:'flex', flexDirection: 'row', marginBottom: 10}} key={object.name}
+    onPress={()=>nav.navigate("WorkExercise", object)}>
+        <View style={{...styles.exerciseCard, backgroundColor: lightenColor(tyles[type],45)}} >
         {/* Primera columna - Nombre y duración */}
         <View style={{...styles.columnCard, maxWidth: '40%'}}>
           <Text style={{...styles.nameText, color:tyles[type]}} numberOfLines={2}>
@@ -38,7 +41,7 @@ const exerciseCard = ({type, object})=>{
       <View style={{...styles.columnCard,backgroundColor: tyles[type], borderTopRightRadius: 15,borderBottomRightRadius: 15, alignContent: 'center', justifyContent: 'center', padding: 20}}>
             <Icon name="circle-play" color='#fff' size={40}/>
       </View>
-    </View>
+    </TouchableOpacity>
     
   );
 }
