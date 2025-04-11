@@ -7,64 +7,59 @@ import exerciseCard from "../../Components/ExerciseCard";
 
 const MuscleScreen = ({ navigation }) => {
   const [muscles] = useState([
-    "Back",
+    "Espalda",
     "Cardio",
-    "Chest",
+    "Pecho",
     "Lower arms",
     "Lower legs",
-    "Neck",
-    "Shoulders",
+    "Cuello",
+    "Hombros",
     "Upper arms",
-    "Waist",
+    "Cintura",
     "Upper legs",
   ]);
 
-  const [selected, setSelected] = useState("")
-  const [exercises, setExercises] = useState([])
+  const [selected, setSelected] = useState("");
+  const [exercises, setExercises] = useState([]);
 
-  useEffect( ()=>{
-    const v = exerciseData.filter(e => e.bodyPart == selected).slice(0,20)
-    setExercises(v)
-  }
-    ,[selected])
+  useEffect(() => {
+    const v = exerciseData.filter(e => e.bodyPart == selected).slice(0, 20);
+    setExercises(v);
+  }, [selected]);
 
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
         <View style={styles.titleView}>
-          <Text style={styles.titleText}>Escoge un Musculo</Text>
+          <Text style={styles.titleText}>
+            {selected
+              ? `Ejercicios para ${muscles.find(m => m.toLowerCase() === selected)}`
+              : "Escoge un Musculo"}
+          </Text>
         </View>
-        <Button title="Atrás" onPress={()=>{setSelected("")}} style={{height: 45}}></Button>
-        
-            { (exercises.length > 0)?
-            
-              <ScrollView 
-              contentContainerStyle={styles.gridCol}>
-                {
-                  exercises.map( (v,i) => {
-                    return exerciseCard({type:(Math.floor(Math.random() * 4)), object:v})
-                  })
-                }
-              </ScrollView>
-              
-              :
-              <View style={{...styles.gridCol, height: "85%"}}>
-                  {
-                  muscles.map((e, i) => {
-                    return (
-                        <TouchableOpacity
-                        style={[styles.optionButton]}
-                        key={i}
-                        onPress={()=>{setSelected(e.toLowerCase())}}
-                        >
-                          <Text style={styles.buttonText}>{e}</Text>
-                        </TouchableOpacity>
-                    );
-                  })
-                  }
-              </View>
-            }
-        
+        <Button title="Atrás" onPress={() => navigation.goBack()} style={{minHeight: 145}}></Button>
+
+        {exercises.length > 0 ? (
+          <ScrollView contentContainerStyle={styles.gridCol}>
+            {exercises.map((v, i) => {
+              return exerciseCard({ type: Math.floor(Math.random() * 4), object: v });
+            })}
+          </ScrollView>
+        ) : (
+          <View style={{ ...styles.gridCol, height: "85%" }}>
+            {muscles.map((e, i) => {
+              return (
+                <TouchableOpacity
+                  style={[styles.optionButton]}
+                  key={i}
+                  onPress={() => { setSelected(e.toLowerCase()); }}
+                >
+                  <Text style={styles.buttonText}>{e}</Text>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+        )}
       </SafeAreaView>
     </SafeAreaProvider>
   );
@@ -92,17 +87,17 @@ const styles = StyleSheet.create({
 
   gridCol: {
     flexDirection: "column",
-    justifyContent: 'space-between',
+    justifyContent: "space-between",
     gap: 10,
     paddingTop: 10,
-    paddingInline: 10
+    paddingInline: 10,
   },
   optionButton: {
-    flex: 1, // Cada botón ocupa la mitad del ancho
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 15,
-    backgroundColor: "#FFD65A"
+    backgroundColor: "#FFD65A",
   },
   buttonText: {
     fontSize: 25,

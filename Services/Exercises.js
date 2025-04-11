@@ -36,4 +36,6 @@ async function downloadJSON() {
 }
 
 // Ejecutar la función
-downloadJSON();
+//downloadJSON();
+
+//Mientras trabajamos sobre el JSON

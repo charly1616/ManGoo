@@ -16,8 +16,9 @@ const HomeScreen = ({ navigation }) => {
       
       <SafeAreaView style={styles.container}>
       <View style={styles.titleView}>
-        <Text style={styles.titleText}>Asistente deportivo</Text>
+        <Text style={styles.titleText}>Menu Asistente Deportivo</Text>
       </View>
+        
       <View style={styles.gridRow}>
         <TouchableOpacity 
           style={[styles.optionButton, { backgroundColor: navs[0][2] }]}

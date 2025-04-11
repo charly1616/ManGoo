@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity, Button } from "react-native";
 import { useState } from "react";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import Icon from "react-native-vector-icons/FontAwesome6";
@@ -9,16 +9,20 @@ const RoutineTypeScreen = ({ navigation }) => {
   const [navs] = useState([
     ["PredRoutines", "Rutinas predeterminadas", "#FF9D23", "person-running"],
     ["PersRoutines", "Rutinas personalizadas", "#F93827", "users-rays"],
-    ["Exercises", "Ejercicios", "#16C47F", "list-ul"],
     ["Muscles", "Entrenar musculos", "#FFD65A", "dumbbell"],
+    ["Exercises", "Todos los Ejercicios", "#16C47F", "list-ul"],
   ]);
+
+  const [selected, setSelected] = useState("");
 
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
         <View style={styles.titleView}>
-          <Text style={styles.titleText}>Tu Asistente deportivo</Text>
+          <Text style={styles.titleText}>Opciones Para Ejercitarte</Text>
         </View>
+        
+        <Button title="Atrás" onPress={() => navigation.goBack()} style={{minHeight: 145}}></Button>
 
         <View style={styles.gridCol}>
           {navs.map((e, i) => {
