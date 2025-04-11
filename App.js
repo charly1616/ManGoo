@@ -25,7 +25,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        
+        <Stack.Screen name="WorkExercise" component={WorkExerciseScreen} options={{ headerShown: false}} />
         <Stack.Screen name="Main" component={MainScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false, title: 'ManGo' }} />
 
@@ -37,7 +37,7 @@ const App = () => {
         <Stack.Screen name="PredRoutines" component={RoutineScreen} options={{ headerShown: false}} />
         
         <Stack.Screen name="Exercises" component={PlainExScreen} options={{ headerShown: false}} />
-        <Stack.Screen name="WorkExercise" component={WorkExerciseScreen} options={{ headerShown: false}} />
+        
         <Stack.Screen name="Muscles" component={MuscleScreen} options={{ headerShown: false}} />
         
 
