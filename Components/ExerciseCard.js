@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import lightenColor from '../Utilities/Colors.js'
 
 const tyles = ["#5ad98b", "#fe9f4d","#ff6464", "#ffdc4a"]
-const exerciseCard = ({type, object})=>{
+  const exerciseCard = ({type, object})=>{
   const nav = useNavigation()
 
   return (

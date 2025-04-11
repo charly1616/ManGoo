@@ -20,6 +20,7 @@ import MuscleScreen from './Screens/RoutineSc/MusclesScreen.js';
 import PlainExScreen from './Screens/RoutineSc/PlainExercisesScreen.js';
 
 import WorkExerciseScreen from './Screens/RoutineSc/WorkExerciseScreen.js';
+import WorkRoutineScreen from './Screens/RoutineSc/WorkRoutineScreen.js';
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
         
         <Stack.Screen name="Exercises" component={PlainExScreen} options={{ headerShown: false}} />
         <Stack.Screen name="WorkExercise" component={WorkExerciseScreen} options={{ headerShown: false}} />
+        <Stack.Screen name="WorkRoutine" component={WorkRoutineScreen} options={{ headerShown: false}} />
         <Stack.Screen name="Muscles" component={MuscleScreen} options={{ headerShown: false}} />
         
 
