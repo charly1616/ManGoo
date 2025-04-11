@@ -1,0 +1,402 @@
+[
+    {
+        "bodyPart": "espalda",
+        "equipment": "Polea",
+        "gifUrl": "https://v2.exercisedb.io/image/Dt1e7yKu8ZGg0O",
+        "id": "0015",
+        "name": "dominada asistida con agarre cerrado paralelo",
+        "target": "lats",
+        "secondaryMuscles": [
+          "bíceps",
+          "antebrazos"
+        ],
+        "instructions": [
+          "Ajusta la máquina a tu peso y altura deseados.",
+          "Coloca tus manos en las barras paralelas con un agarre cerrado, palmas enfrentadas.",
+          "Cuelga de las barras con los brazos completamente extendidos y los pies fuera del suelo.",
+          "Activa los músculos de tu espalda y tira de tu cuerpo hacia las barras, manteniendo los codos cerca de tu cuerpo.",
+          "Continúa tirando hasta que tu barbilla esté por encima de las barras.",
+          "Pausa por un momento en la parte superior, luego baja lentamente tu cuerpo de nuevo a la posición inicial.",
+          "Repite durante el número deseado de repeticiones."
+          ]
+        },
+            {
+              "bodyPart": "back",
+              "equipment": "barbell",
+              "gifUrl": "https://v2.exercisedb.io/image/gz9wKuZ-SBUEIH",
+              "id": "0034",
+              "name": "pull-over con brazos doblados en banco declinado con barra",
+              "target": "dorsales",
+              "secondaryMuscles": [
+                "tríceps",
+                "pecho"
+              ],
+              "instructions": [
+                "Acuéstate en un banco declinado con la cabeza más baja que las caderas y los pies asegurados.",
+                "Sujeta una barra con un agarre prono (palmas mirando hacia fuera) y extiende los brazos rectos sobre el pecho.",
+                "Baja la barra detrás de la cabeza de forma controlada, manteniendo los brazos ligeramente doblados.",
+                "Haz una pausa, luego sube la barra de nuevo a la posición inicial contrayendo los dorsales.",
+                "Repite el número deseado de repeticiones."
+              ]
+            },
+            {
+              "bodyPart": "cardio",
+              "equipment": "body weight",
+              "gifUrl": "https://v2.exercisedb.io/image/HEixh9Go9R0Tpu",
+              "id": "0501",
+              "name": "burpee con salto de tijera",
+              "target": "sistema cardiovascular",
+              "secondaryMuscles": [
+                "cuádriceps",
+                "isquiotibiales",
+                "pantorrillas",
+                "hombros",
+                "tríceps",
+                "core"
+              ],
+              "instructions": [
+                "Comienza de pie con los pies al ancho de los hombros.",
+                "Baja el cuerpo en posición de sentadilla, colocando las manos en el suelo frente a ti.",
+                "Lanza los pies hacia atrás para caer en posición de flexión.",
+                "Haz una flexión de pecho, bajando hasta el suelo y empujando de nuevo hacia arriba.",
+                "Salta con los pies hacia adelante, aterrizando en posición de sentadilla.",
+                "Salta explosivamente hacia arriba, extendiendo los brazos por encima de la cabeza.",
+                "Aterriza suavemente y baja de inmediato de nuevo a la posición de sentadilla para comenzar la siguiente repetición."
+              ]
+            },
+            {
+              "bodyPart": "cardio",
+              "equipment": "body weight",
+              "gifUrl": "https://v2.exercisedb.io/image/zue5pStJWsuhKd",
+              "id": "0630",
+              "name": "escalador de montaña",
+              "target": "sistema cardiovascular",
+              "secondaryMuscles": [
+                "core",
+                "hombros",
+                "tríceps"
+              ],
+              "instructions": [
+                "Comienza en posición de plancha alta con las manos directamente debajo de los hombros y el cuerpo en línea recta.",
+                "Activa el core y lleva la rodilla derecha hacia el pecho, luego cambia rápidamente y lleva la rodilla izquierda hacia el pecho.",
+                "Continúa alternando las piernas en un movimiento como de correr, manteniendo las caderas bajas y el core activado.",
+                "Mantén un ritmo constante y respira de manera uniforme durante el ejercicio.",
+                "Repite durante el número deseado de repeticiones."
+              ]
+            },
+            {
+              "bodyPart": "chest",
+              "equipment": "barbell",
+              "gifUrl": "https://v2.exercisedb.io/image/CVl3tjvPSA5Dyi",
+              "id": "0025",
+              "name": "press de banca con barra",
+              "target": "pectorales",
+              "secondaryMuscles": [
+                "tríceps",
+                "hombros"
+              ],
+              "instructions": [
+                "Acuéstate sobre un banco con los pies apoyados en el suelo y la espalda pegada al banco.",
+                "Sujeta la barra con un agarre en pronación, ligeramente más ancho que el ancho de los hombros.",
+                "Levanta la barra del soporte y sostenla directamente sobre tu pecho con los brazos completamente extendidos.",
+                "Baja la barra lentamente hacia tu pecho, manteniendo los codos cerca del cuerpo.",
+                "Haz una pausa cuando la barra toque tu pecho.",
+                "Empuja la barra hacia arriba hasta la posición inicial extendiendo los brazos.",
+                "Repite durante el número deseado de repeticiones."
+              ]
+            },
+                {
+                  "bodyPart": "chest",
+                  "equipment": "barbell",
+                  "gifUrl": "https://v2.exercisedb.io/image/eyU5e9VXTG9fnA",
+                  "id": "0033",
+                  "name": "press de banca declinado con barra",
+                  "target": "pectorales",
+                  "secondaryMuscles": [
+                    "tríceps",
+                    "hombros"
+                  ],
+                  "instructions": [
+                    "Acuéstate en un banco declinado con los pies asegurados y la cabeza más baja que las caderas.",
+                    "Sujeta la barra con un agarre en pronación ligeramente más ancho que el ancho de los hombros.",
+                    "Desengancha la barra y bájala lentamente hacia tu pecho, manteniendo los codos hacia adentro.",
+                    "Haz una pausa en la parte inferior, luego empuja la barra hacia arriba hasta la posición inicial.",
+                    "Repite la cantidad deseada de repeticiones."
+                  ]
+                },
+                {
+                  "bodyPart": "lower arms",
+                  "equipment": "barbell",
+                  "gifUrl": "https://v2.exercisedb.io/image/81u6KAOAkrKQMk",
+                  "id": "0079",
+                  "name": "curl inverso de muñeca con barra v. 2",
+                  "target": "antebrazos",
+                  "secondaryMuscles": [
+                    "bíceps",
+                    "braquial"
+                  ],
+                  "instructions": [
+                    "Siéntate en un banco con los pies planos en el suelo y las rodillas dobladas.",
+                    "Sujeta una barra con un agarre en pronación, palmas hacia abajo, y las manos al ancho de los hombros.",
+                    "Apoya los antebrazos en los muslos, permitiendo que las muñecas cuelguen del borde.",
+                    "Manteniendo los antebrazos inmóviles, exhala y flexiona las muñecas hacia arriba lo más posible.",
+                    "Mantén la posición contraída un momento, luego inhala y baja lentamente la barra hasta la posición inicial.",
+                    "Repite la cantidad deseada de repeticiones."
+                  ]
+                },
+                {
+                  "bodyPart": "lower arms",
+                  "equipment": "barbell",
+                  "gifUrl": "https://v2.exercisedb.io/image/lPjR9LN2ijF7rc",
+                  "id": "0082",
+                  "name": "curl inverso de muñeca con barra",
+                  "target": "antebrazos",
+                  "secondaryMuscles": [
+                    "bíceps",
+                    "braquial"
+                  ],
+                  "instructions": [
+                    "Siéntate en un banco con los pies planos en el suelo y sujeta una barra con un agarre en pronación, palmas hacia abajo.",
+                    "Apoya los antebrazos en los muslos, permitiendo que las muñecas cuelguen del borde.",
+                    "Flexiona lentamente las muñecas hacia arriba, llevando la barra hacia tu cuerpo.",
+                    "Haz una pausa en la parte superior, luego baja la barra lentamente hasta la posición inicial.",
+                    "Repite la cantidad deseada de repeticiones."
+                  ]
+                },
+                {
+                  "bodyPart": "lower legs",
+                  "equipment": "barbell",
+                  "gifUrl": "https://v2.exercisedb.io/image/vndLqVyB-VUzJR",
+                  "id": "0088",
+                  "name": "elevación de talones sentado con barra",
+                  "target": "pantorrillas",
+                  "secondaryMuscles": [
+                    "isquiotibiales",
+                    "cuádriceps"
+                  ],
+                  "instructions": [
+                    "Siéntate en un banco con los pies planos en el suelo y una barra descansando sobre tus muslos.",
+                    "Coloca las puntas de los pies en una plataforma elevada, como un bloque o escalón.",
+                    "Ubica la barra sobre tus muslos y sujétala firmemente con las manos.",
+                    "Manteniendo la espalda recta y el core activo, levanta los talones del suelo extendiendo los tobillos.",
+                    "Haz una pausa en la parte superior, luego baja lentamente los talones a la posición inicial.",
+                    "Repite la cantidad deseada de repeticiones."
+                  ]
+                },
+                {
+                  "bodyPart": "lower legs",
+                  "equipment": "barbell",
+                  "gifUrl": "https://v2.exercisedb.io/image/S18ju9k4WETEC2",
+                  "id": "0108",
+                  "name": "elevación de talones de pie con barra",
+                  "target": "pantorrillas",
+                  "secondaryMuscles": [
+                    "isquiotibiales",
+                    "glúteos"
+                  ],
+                  "instructions": [
+                    "Párate con los pies al ancho de los hombros y coloca una barra sobre la parte superior de la espalda.",
+                    "Eleva los talones del suelo lo más alto posible, utilizando las pantorrillas.",
+                    "Haz una pausa en la parte superior, luego baja lentamente los talones a la posición inicial.",
+                    "Repite la cantidad deseada de repeticiones."
+                  ]
+                },
+                {
+                  "bodyPart": "neck",
+                  "equipment": "body weight",
+                  "gifUrl": "https://v2.exercisedb.io/image/ffKVZDbiEpvVEQ",
+                  "id": "0716",
+                  "name": "estiramiento lateral del cuello con presión",
+                  "target": "elevador de la escápula",
+                  "secondaryMuscles": [
+                    "trapecio",
+                    "esternocleidomastoideo"
+                  ],
+                  "instructions": [
+                    "Párate o siéntate erguido con los hombros relajados.",
+                    "Inclina la cabeza hacia la derecha, llevando la oreja derecha hacia el hombro derecho.",
+                    "Coloca la mano derecha sobre el lado izquierdo de la cabeza y aplica una presión suave para aumentar el estiramiento.",
+                    "Mantén el estiramiento durante 15-30 segundos.",
+                    "Repite del otro lado, inclinando la cabeza hacia la izquierda y aplicando presión con la mano izquierda.",
+                    "Repite el estiramiento 2-3 veces por cada lado."
+                  ]
+                },
+                {
+                  "bodyPart": "neck",
+                  "equipment": "body weight",
+                  "gifUrl": "https://v2.exercisedb.io/image/n9Co5cgPjj6Hol",
+                  "id": "1403",
+                  "name": "estiramiento lateral del cuello",
+                  "target": "elevador de la escápula",
+                  "secondaryMuscles": [
+                    "trapecio",
+                    "esternocleidomastoideo"
+                  ],
+                  "instructions": [
+                    "Párate o siéntate erguido con los hombros relajados.",
+                    "Inclina la cabeza hacia un lado, llevando la oreja hacia el hombro.",
+                    "Mantén el estiramiento durante 15-30 segundos.",
+                    "Repite del otro lado.",
+                    "Realiza de 2 a 4 series por cada lado."
+                  ]
+                },
+                {
+                  "bodyPart": "shoulders",
+                  "equipment": "barbell",
+                  "gifUrl": "https://v2.exercisedb.io/image/HxD7P68W5kMvhi",
+                  "id": "0041",
+                  "name": "elevación frontal con barra",
+                  "target": "deltoides",
+                  "secondaryMuscles": [
+                    "bíceps",
+                    "tríceps"
+                  ],
+                  "instructions": [
+                    "Párate con los pies al ancho de los hombros y sujeta una barra frente a tus muslos con un agarre en pronación.",
+                    "Mantén los brazos rectos y levanta la barra hacia adelante y hacia arriba hasta alcanzar el nivel de los hombros.",
+                    "Haz una pausa en la parte superior, luego baja la barra lentamente a la posición inicial.",
+                    "Repite la cantidad deseada de repeticiones."
+                  ]
+                },
+                {
+                  "bodyPart": "shoulders",
+                  "equipment": "barbell",
+                  "gifUrl": "https://v2.exercisedb.io/image/e3QMKBjIcLVG4P",
+                  "id": "0067",
+                  "name": "arranque con un brazo y barra",
+                  "target": "deltoides",
+                  "secondaryMuscles": [
+                    "trapecios",
+                    "antebrazos",
+                    "core"
+                  ],
+                  "instructions": [
+                    "Párate con los pies al ancho de los hombros, los dedos apuntando ligeramente hacia afuera.",
+                    "Sujeta la barra con un agarre en pronación, manos un poco más anchas que los hombros.",
+                    "Dobla las rodillas y baja las caderas en posición de sentadilla, manteniendo la espalda recta y el pecho elevado.",
+                    "Extiende explosivamente las caderas, rodillas y tobillos, impulsando la barra hacia arriba.",
+                    "Cuando la barra llegue al nivel del pecho, tira de ella con el brazo, manteniéndola cerca del cuerpo.",
+                    "Rota el codo debajo de la barra y extiende completamente el brazo sobre la cabeza, bloqueando el codo.",
+                    "Baja la barra de forma controlada hasta la posición inicial.",
+                    "Repite la cantidad deseada de repeticiones, luego cambia de brazo."
+                  ]
+                },
+                {
+                  "bodyPart": "upper arms",
+                  "equipment": "barbell",
+                  "gifUrl": "https://v2.exercisedb.io/image/VPbPhrOI5DUgnt",
+                  "id": "0023",
+                  "name": "curl alterno de bíceps con barra",
+                  "target": "bíceps",
+                  "secondaryMuscles": [
+                    "antebrazos"
+                  ],
+                  "instructions": [
+                    "Párate derecho con los pies al ancho de los hombros y sujeta una barra en cada mano, palmas hacia adelante.",
+                    "Mantén los brazos superiores quietos y exhala mientras flexionas los codos, contrayendo los bíceps.",
+                    "Sigue levantando las barras hasta que los bíceps estén completamente contraídos y las barras estén a la altura de los hombros.",
+                    "Mantén la posición contraída brevemente mientras aprietas los bíceps.",
+                    "Inhala mientras bajas lentamente las barras hasta la posición inicial.",
+                    "Repite la cantidad deseada de repeticiones, alternando los brazos."
+                  ]
+                },
+                    {
+                      "bodyPart": "brazos superiores",
+                      "equipment": "barra",
+                      "gifUrl": "https://v2.exercisedb.io/image/g7u8FBTX-Dqagp",
+                      "id": "0030",
+                      "name": "press de banca con agarre cerrado con barra",
+                      "target": "tríceps",
+                      "secondaryMuscles": [
+                        "pecho",
+                        "hombros"
+                      ],
+                      "instructions": [
+                        "Acuéstate en un banco con los pies apoyados en el suelo y la espalda presionada contra el banco.",
+                        "Sujeta la barra con un agarre cerrado, ligeramente más estrecho que el ancho de los hombros.",
+                        "Desengancha la barra y bájala lentamente hacia el pecho, manteniendo los codos cerca del cuerpo.",
+                        "Haz una pausa cuando la barra toque el pecho.",
+                        "Empuja la barra de nuevo a la posición inicial, extendiendo completamente los brazos.",
+                        "Repite durante el número deseado de repeticiones."
+                      ]
+                    },
+                    {
+                      "bodyPart": "cintura",
+                      "equipment": "Peso Corporal",
+                      "id": "0001",
+                      "name": "Abdominal Crunch",
+                      "target": "Abdominales",
+                      "secondaryMuscles": [
+                        "flexores de la cadera",
+                        "zona lumbar"
+                      ],
+                      "instructions": [
+                        "Acuéstate boca arriba con las rodillas dobladas y los pies planos en el suelo.",
+                        "Coloca tus manos detrás de la cabeza con los codos apuntando hacia afuera.",
+                        "Contrayendo tus abdominales, levanta lentamente la parte superior de tu cuerpo del suelo, curvándote hacia adelante hasta que tu torso esté en un ángulo de 45 grados.",
+                        "Pausa por un momento en la parte superior, luego baja lentamente la parte superior de tu cuerpo de nuevo a la posición inicial.",
+                        "Repite durante el número deseado de repeticiones."
+                      ]
+                    },
+                    {
+                      "bodyPart": "cintura",
+                      "equipment": "peso corporal",
+                      "gifUrl": "https://v2.exercisedb.io/image/O4EMKK1uNdc1ho",
+                      "id": "0001",
+                      "name": "elevación de tronco 3/4",
+                      "target": "abdominales",
+                      "secondaryMuscles": [
+                        "flexores de la cadera",
+                        "zona lumbar"
+                      ],
+                      "instructions": [
+                        "Acuéstate boca arriba con las rodillas dobladas y los pies planos en el suelo.",
+                        "Coloca tus manos detrás de la cabeza con los codos apuntando hacia afuera.",
+                        "Contrayendo los abdominales, levanta lentamente la parte superior del cuerpo, curvándote hacia adelante hasta que el torso esté en un ángulo de 45 grados.",
+                        "Haz una pausa en la parte superior, luego baja lentamente el torso de nuevo a la posición inicial.",
+                        "Repite durante el número deseado de repeticiones."
+                      ]
+                    },
+                    {
+                      "bodyPart": "piernas superiores",
+                      "equipment": "peso corporal",
+                      "gifUrl": "https://v2.exercisedb.io/image/7x9P-hYrBvBpL5",
+                      "id": "0020",
+                      "name": "tabla de equilibrio",
+                      "target": "cuádriceps",
+                      "secondaryMuscles": [
+                        "pantorrillas",
+                        "isquiotibiales",
+                        "glúteos"
+                      ],
+                      "instructions": [
+                        "Coloca la tabla de equilibrio sobre una superficie plana.",
+                        "Sube con un pie sobre la tabla, asegurándote de que esté centrado.",
+                        "Transfiere lentamente tu peso al pie sobre la tabla, manteniendo el núcleo activado.",
+                        "Mantén el equilibrio y la estabilidad durante el tiempo deseado.",
+                        "Repite el ejercicio con el otro pie."
+                      ]
+                    },
+                    {
+                      "bodyPart": "piernas superiores",
+                      "equipment": "barra",
+                      "gifUrl": "https://v2.exercisedb.io/image/Ys1YHlEeYhADiJ",
+                      "id": "0024",
+                      "name": "sentadilla frontal en banco con barra",
+                      "target": "cuádriceps",
+                      "secondaryMuscles": [
+                        "isquiotibiales",
+                        "glúteos",
+                        "pantorrillas"
+                      ],
+                      "instructions": [
+                        "Comienza de pie con los pies al ancho de los hombros y la barra apoyada sobre la parte superior del pecho, justo debajo de la clavícula.",
+                        "Sujeta la barra con un agarre en pronación, manteniendo los codos elevados y los brazos paralelos al suelo.",
+                        "Baja el cuerpo en posición de sentadilla doblando las rodillas y las caderas, manteniendo la espalda recta y el pecho erguido.",
+                        "Haz una pausa en la parte inferior de la sentadilla, luego empuja con los talones para volver a la posición inicial.",
+                        "Repite durante el número deseado de repeticiones."
+                      ]
+                    }
+                  ]
+                      
+                  
