@@ -81,6 +81,14 @@ const WorkExerciseScreen = ({ navigation }) => {
   const restartInstructions = useDoublePress(handleNextInstruction,()=>{setInsNum(0);setAutoAdvance(true)})
 
 
+  //TERMINAR EJERCICIO
+  const skip = () => {
+    navigation.goBack()
+
+    const markAsDone = exercise.finishExercise
+    markAsDone?.(exercise.selfId)
+  }
+
   //TEMPORIZADOR DEL EJERCICIO
   useEffect(() => {
     let interval = null;
@@ -135,7 +143,7 @@ const WorkExerciseScreen = ({ navigation }) => {
           </TouchableOpacity>
           {/*SKIP BUTTON*/}
           <TouchableOpacity style={{...styles.Button, backgroundColor: '#FF9D23'}} accessibilityLabel="Terminar ejercicio"
-            onPress={()=> alert("Ejercicio terminado")}>
+            onPress={()=> skip()}>
             <Icon name="forward-step" size={75} color="#fff" />
           </TouchableOpacity>
         </View>   

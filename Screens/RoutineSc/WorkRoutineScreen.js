@@ -7,11 +7,11 @@ import { useRoute } from '@react-navigation/native';
 
 import exerciseData from '../../Services/Exercises.json' with { type: 'json' };
 
-const exerciseButtonSimple = ({object, isDone, key}) =>{
+const exerciseButtonSimple = ({object, isDone, key, func}) =>{
     const nav = useNavigation();
 
     return <TouchableOpacity activeOpacity={isDone? 0.4 : 1} style={{padding: 5, display: 'flex', flexDirection: 'row', gap: 10, opacity: isDone ? 0.5 : 1}}
-    onPress={()=>nav.navigate("WorkExercise", object)}
+    onPress={()=>nav.navigate("WorkExercise", {...object, ...func})}
     disabled={isDone}
     key={key}>
         <View style={{padding: 15, paddingLeft: 30, backgroundColor: "#f88", borderRadius:10, flex: 10,}}>
@@ -33,10 +33,21 @@ const WorkRoutineScreen = ({ navigation }) => {
     const [exercises, setExercises] = useState(route.params?.routine.exercises?.map((e) => [e, false]) ||
     [["0015", true],["0014", true],["0015", false],["0014", false],["0015", false]])
 
+    const handleExerciseFinished = (exerciseId) => {
+      setExercises(prevExercises => 
+        prevExercises.map(item => {
+          if (item[0].selfId === exerciseId) {
+            return [item[0], true];
+          }
+          return item;
+        })
+      );
+  }
       //Set Exercises
       useEffect( ()=> {
-        let translatedExercise = route.params?.routine.exercises?.map(e => [ exerciseData.find(u => u.id === e), false])
+        let translatedExercise = route.params?.routine.exercises?.map((e,i) => [ {...exerciseData.find(u => u.id === e), selfId: i }, false])
         setExercises(translatedExercise)
+
       }, [])
 
     const handleNextExercise = () => {
@@ -44,9 +55,7 @@ const WorkRoutineScreen = ({ navigation }) => {
         if (remaining.length > 0) navigation.navigate("WorkExercise", remaining[0][0])
     }
 
-    const handleExerciseFinished = (exercise) => {
-        
-    }
+    
 
   return <SafeAreaProvider>
             <SafeAreaView style={styles.container}>
@@ -58,7 +67,7 @@ const WorkRoutineScreen = ({ navigation }) => {
                 <Button title="Atrás" onPress={() => navigation.goBack()} style={{minHeight: 120, maxHeight: 120}}></Button>
                 {/*LIST OF EXERCISES */}
                 <ScrollView style={{height:'100%', display: 'flex', flexDirection: 'column', padding: 12}}>
-                    {exercises.map((e,i) => exerciseButtonSimple({object: e[0],isDone: e[1], key: i})
+                    {exercises.map((e,i) => exerciseButtonSimple({object: e[0],isDone: e[1], key: i, func: {"finishExercise": handleExerciseFinished}})
                     )}
                 </ScrollView>
 
