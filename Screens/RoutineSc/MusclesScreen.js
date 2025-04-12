@@ -23,7 +23,7 @@ const MuscleScreen = ({ navigation }) => {
   const [exercises, setExercises] = useState([]);
 
   useEffect(() => {
-    const v = exerciseData.filter(e => e.bodyPart == selected).slice(0, 20);
+    const v = exerciseData.filter(e => e.bodyPart.toLowerCase() === selected).slice(0, 20);
     setExercises(v);
   }, [selected]);
 
