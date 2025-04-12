@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 
 import exerciseData from '../../Services/Exercises.json' with { type: 'json' };
-import exerciseCard from "../../Components/ExerciseCard";
+import ExerciseCard from "../../Components/ExerciseCard";
 
 
 const PlainExScreen = ({ navigation }) => {
@@ -30,7 +30,7 @@ const PlainExScreen = ({ navigation }) => {
             {error && <Text>Error: {error}</Text>}
             {
               (Exs !== null && Exs !== undefined) && Exs.slice(0,15).map( (v,i) => {
-                return exerciseCard({type:(Math.floor(Math.random() * 4)), object:v})
+                return <ExerciseCard type= {Math.floor(Math.random() * 4)} object= {v} navigation={navigation} key={v.id}/>
               })
               }
           </ScrollView>

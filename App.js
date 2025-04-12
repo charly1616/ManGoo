@@ -34,7 +34,6 @@ const App = () => {
         <Stack.Screen name="Configuration" component={ConfigScreen} options={{ headerShown: false}} />
         <Stack.Screen name="ChooseRoutines" component={RoutineTypeScreen} options={{ headerShown: false}} />
         <Stack.Screen name="History" component={HistoryScreen} options={{ headerShown: false}} />
-        
         <Stack.Screen name="PredRoutines" component={RoutineScreen} options={{ headerShown: false}} />
         
         <Stack.Screen name="Exercises" component={PlainExScreen} options={{ headerShown: false}} />

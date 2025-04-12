@@ -2,8 +2,8 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, Button, ScrollView } f
 import { useEffect, useState } from "react";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 
-import exerciseData from '../../Services/Exercises.json' with { type: 'json' };
-import exerciseCard from "../../Components/ExerciseCard";
+import exerciseData from '../../Services/ExercisesF.json' with { type: 'json' };
+import ExerciseCard from "../../Components/ExerciseCard";
 
 const MuscleScreen = ({ navigation }) => {
   const [muscles] = useState([
@@ -42,7 +42,7 @@ const MuscleScreen = ({ navigation }) => {
         {exercises.length > 0 ? (
           <ScrollView contentContainerStyle={styles.gridCol}>
             {exercises.map((v, i) => {
-              return exerciseCard({ type: Math.floor(Math.random() * 4), object: v });
+              return <ExerciseCard type= {Math.floor(Math.random() * 4)} object= {v} navigation={navigation}/>
             })}
           </ScrollView>
         ) : (

@@ -5,13 +5,15 @@ import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import Icon from 'react-native-vector-icons/FontAwesome6';
 import { useRoute } from '@react-navigation/native';
 
-const exerciseButtonSimple = ({object, isDone}) =>{
+import exerciseData from '../../Services/Exercises.json' with { type: 'json' };
+
+const exerciseButtonSimple = ({object, isDone, key}) =>{
     const nav = useNavigation();
 
     return <TouchableOpacity activeOpacity={isDone? 0.4 : 1} style={{padding: 5, display: 'flex', flexDirection: 'row', gap: 10, opacity: isDone ? 0.5 : 1}}
     onPress={()=>nav.navigate("WorkExercise", object)}
     disabled={isDone}
-    key={object.name}>
+    key={key}>
         <View style={{padding: 15, paddingLeft: 30, backgroundColor: "#f88", borderRadius:10, flex: 10,}}>
             <Text numberOfLines={1}  style={{fontSize: 18, color: '#fff', fontWeight: 500,}}>{object.name}</Text>
         </View>
@@ -26,44 +28,37 @@ const exerciseButtonSimple = ({object, isDone}) =>{
 }
 
 
-const WorkRoutineScreen = ({ navigation, name, exercisePool }) => {
-    const [exercises, setExercises] = useState(exercisePool?.map((e) => [e, false]) ||
-    [[{name:"Exercise1"}, true],[{name:"Exercise2"}, true],[{
-        "bodyPart": "waist",
-        "equipment": "assisted",
-        "gifUrl": "https://v2.exercisedb.io/image/Nulc7ZLGbqFn7H",
-        "id": "0011",
-        "name": "assisted hanging knee raise",
-        "target": "abs",
-        "secondaryMuscles": [
-          "hip flexors"
-        ],
-        "instructions": [
-          "Hang from a pull-up bar with your arms fully extended and your palms facing away from you.",
-          "Engage your core muscles and lift your knees towards your chest, bending at the hips and knees.",
-          "Pause for a moment at the top of the movement, squeezing your abs.",
-          "Slowly lower your legs back down to the starting position.",
-          "Repeat for the desired number of repetitions."
-        ]
-      }, false],[{name:"Exercise4"}, false],[{name:"Exercise5"}, false]])
+const WorkRoutineScreen = ({ navigation }) => {
+  const route = useRoute();
+    const [exercises, setExercises] = useState(route.params?.routine.exercises?.map((e) => [e, false]) ||
+    [["0015", true],["0014", true],["0015", false],["0014", false],["0015", false]])
 
+      //Set Exercises
+      useEffect( ()=> {
+        let translatedExercise = route.params?.routine.exercises?.map(e => [ exerciseData.find(u => u.id === e), false])
+        setExercises(translatedExercise)
+      }, [])
 
     const handleNextExercise = () => {
         let remaining = exercises.filter( e => !e[1])
         if (remaining.length > 0) navigation.navigate("WorkExercise", remaining[0][0])
     }
 
+    const handleExerciseFinished = (exercise) => {
+        
+    }
+
   return <SafeAreaProvider>
             <SafeAreaView style={styles.container}>
                 {/*SORT OF TITLE */}
                 <View style={styles.titleView}>
-                    <Text style={styles.titleText}>{name || "<Nombre de rutina>"}</Text>
+                    <Text style={styles.titleText}>{route.params.routine.name || "<Nombre de rutina>"}</Text>
                 </View>
                 {/*GO BACK BUTTON */}
                 <Button title="Atrás" onPress={() => navigation.goBack()} style={{minHeight: 120, maxHeight: 120}}></Button>
                 {/*LIST OF EXERCISES */}
                 <ScrollView style={{height:'100%', display: 'flex', flexDirection: 'column', padding: 12}}>
-                    {exercises.map((e) => exerciseButtonSimple({object: e[0],isDone: e[1]})
+                    {exercises.map((e,i) => exerciseButtonSimple({object: e[0],isDone: e[1], key: i})
                     )}
                 </ScrollView>
 

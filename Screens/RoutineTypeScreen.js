@@ -3,14 +3,14 @@ import { useState } from "react";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import Icon from "react-native-vector-icons/FontAwesome6";
 
-
+import Rutines from '../Services/Rutines.json' with { type: 'json' };
 
 const RoutineTypeScreen = ({ navigation }) => {
   const [navs] = useState([
-    ["PredRoutines", "Rutinas predeterminadas", "#FF9D23", "person-running"],
-    ["PersRoutines", "Rutinas personalizadas", "#F93827", "users-rays"],
-    ["Muscles", "Entrenar musculos", "#FFD65A", "dumbbell"],
-    ["Exercises", "Todos los Ejercicios", "#16C47F", "list-ul"],
+    ["PredRoutines", "Rutinas predeterminadas", "#FF9D23", "person-running", {routine:Rutines}],
+    ["PredRoutines", "Rutinas personalizadas", "#F93827", "users-rays", {routine:Rutines}],
+    ["Muscles", "Entrenar musculos", "#FFD65A", "dumbbell", {}],
+    ["Exercises", "Todos los Ejercicios", "#16C47F", "list-ul", {}],
   ]);
 
   const [selected, setSelected] = useState("");
@@ -29,8 +29,8 @@ const RoutineTypeScreen = ({ navigation }) => {
             return (
               <TouchableOpacity
                 style={[styles.optionButton, { backgroundColor: e[2] }]}
-                onPress={() => navigation.navigate(e[0])}
-                key={e[0]}
+                onPress={() => navigation.navigate(e[0], e[4])}
+                key={e[1]}
               >
                 <Icon name={e[3]} size={75} color="#eee" />
                 <Text style={styles.buttonText}>{e[1]}</Text>

@@ -134,7 +134,8 @@ const WorkExerciseScreen = ({ navigation }) => {
             <Icon name={isRunning?"pause":"play"} size={75} color="#fff" />
           </TouchableOpacity>
           {/*SKIP BUTTON*/}
-          <TouchableOpacity style={{...styles.Button, backgroundColor: '#FF9D23'}} accessibilityLabel="Terminar ejercicio">
+          <TouchableOpacity style={{...styles.Button, backgroundColor: '#FF9D23'}} accessibilityLabel="Terminar ejercicio"
+            onPress={()=> alert("Ejercicio terminado")}>
             <Icon name="forward-step" size={75} color="#fff" />
           </TouchableOpacity>
         </View>   
